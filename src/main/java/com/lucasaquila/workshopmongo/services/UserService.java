@@ -28,8 +28,13 @@ public class UserService {
 		return user;
 	}
 	
-	public User inser(User user) {
+	public User insert(User user) {
 		return userRepository.insert(user);
+	}
+	
+	public void delete(String id) {
+		findById(id);
+		userRepository.deleteById(id);
 	}
 	
 	public User fromDto(UserDTO userDto) {
